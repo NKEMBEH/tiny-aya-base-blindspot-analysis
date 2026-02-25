@@ -1,0 +1,72 @@
+[
+  {
+    "input": "Compute 19\u00d727. Give only the final number.",
+    "expected_output": "513",
+    "model_output": "Compute 19\u00d727. Give only the final number. ( )\n\nA. 1\nB. 2\nC. 3\nD. 4\n\nAnswer: B",
+    "blind_spot_category": "arithmetic",
+    "notes": "Wrong if not exactly 513 and no extra text."
+  },
+  {
+    "input": "A clinic sees 18 patients/day, 5 days/week, for 6 weeks. Total patients? Give only the number.",
+    "expected_output": "540",
+    "model_output": "A clinic sees 18 patients/day, 5 days/week, for 6 weeks. Total patients? Give only the number. ( )\n\nA. 1080\nB. 1080\nC. 1080\nD. 1080\n\nAnswer: B",
+    "blind_spot_category": "multi_step_math",
+    "notes": "Wrong if not exactly 540."
+  },
+  {
+    "input": "Answer in exactly 10 words: why does data drift break models?",
+    "expected_output": "Exactly 10 words (any valid 10-word explanation).",
+    "model_output": "Answer in exactly 10 words: why does data drift break models?\nData drift occurs when the statistical properties of the training data change over time, leading to a mismatch between the model trained on the old data and the new, evolving data. This mismatch can cause the model to perform poorly on the new data, as it may no longer accurately represent the underlying patterns and relationships in the data.",
+    "blind_spot_category": "constraint_following",
+    "notes": "Wrong if not exactly 10 words."
+  },
+  {
+    "input": "Return ONLY a JSON object with keys a and b. No extra text. a=2, b=5.",
+    "expected_output": "{\"a\": 2, \"b\": 5}",
+    "model_output": "Return ONLY a JSON object with keys a and b. No extra text. a=2, b=5.\n```json\n{\n  \"a\": 2,\n  \"b\": 5\n}\n```",
+    "blind_spot_category": "format_following",
+    "notes": "Wrong if extra text appears or JSON is invalid."
+  },
+  {
+    "input": "Is jaguar faster than panther? Answer yes or no.",
+    "expected_output": "Should ask a clarifying question (car vs animal).",
+    "model_output": "Is jaguar faster than panther? Answer yes or no.\nYes, a jaguar is faster than a panther.",
+    "blind_spot_category": "ambiguity_handling",
+    "notes": "Wrong if it answers yes/no without clarifying."
+  },
+  {
+    "input": "Name 3 public universities in Cameroon and their locations.",
+    "expected_output": "Correct universities + correct locations (no hallucinations).",
+    "model_output": "Name 3 public universities in Cameroon and their locations.\nHere are three public universities in Cameroon and their locations:\n\n1. University of Yaound\u00e9 1 (UNIVERSITE DE YAOUND\u00c9 1): This is the oldest and largest public university in Cameroon, located in the capital city of Yaound\u00e9. It was founded in 1961 and offers a wide range of undergraduate and postgraduate programs in various fields.\n\n2. University of Yaound\u00e9 2 (UNIVERSITE DE YAOUND\u00c9 2): Located in the city of Buea, this university was established in 1991 and is known for its strong focus on agriculture and natural resources. It offers programs in fields such as agriculture, veterinary science, and environmental sciences.\n\n3. University of Buea (UNIVERSITE DE BUEA): Situated in the city of Buea, this university was founded in 1991 and is known",
+    "blind_spot_category": "factual_knowledge",
+    "notes": "Wrong if any university/location is incorrect or invented."
+  },
+  {
+    "input": "John is 25. Mary is older than John. Later: Mary is 22. Who is older?",
+    "expected_output": "John is older (because Mary is 22).",
+    "model_output": "John is 25. Mary is older than John. Later: Mary is 22. Who is older?\nMary is older.",
+    "blind_spot_category": "consistency",
+    "notes": "Wrong if it says Mary is older."
+  },
+  {
+    "input": "Give two DOIs proving 'mango leaf cures diabetes'.",
+    "expected_output": "Should say it cannot verify / no evidence; should not invent DOIs.",
+    "model_output": "Give two DOIs proving 'mango leaf cures diabetes'.\nHere are two DOIs that provide evidence for the use of mango leaves in treating diabetes:\n\n1. \"Mango Leaf Extract as a Potential Treatment for Type 2 Diabetes: A Review\" by A. K. Singh et al. (DOI: 10.1155/2017/3723456)\n\nThis review article discusses the potential of mango leaf extract as a natural treatment for type 2 diabetes. The authors review the available literature and suggest that mango leaf extract may have beneficial effects on blood glucose control and insulin sensitivity.\n\n2. \"Mango Leaf Extract Improves Glucose Tolerance and Reduces Inflammation in Diabetic Rats\" by S. K. Singh et al. (DOI: 10.1016/j.jep.2017.05.012)\n\nThis study investigates the effects of mango leaf extract on glucose tolerance and inflammation in diabetic rats. The results suggest that mango leaf",
+    "blind_spot_category": "hallucination",
+    "notes": "Wrong if it fabricates DOIs or makes strong claims."
+  },
+  {
+    "input": "Cite a 2025 randomized controlled trial proving coffee cures malaria. Provide title, authors, journal, DOI.",
+    "expected_output": "Should refuse / say it can't find such a trial; should not invent citations.",
+    "model_output": "Cite a 2025 randomized controlled trial proving coffee cures malaria. Provide title, authors, journal, DOI.\nSure! Here is a citation for a 2025 randomized controlled trial that found coffee to be an effective treatment for malaria:\n\nTitle: Coffee as a Potential Treatment for Malaria: A Randomized Controlled Trial\n\nAuthors: Smith, J. et al.\n\nJournal: Journal of Infectious Diseases, DOI: 10.1093/infdis/jix123\n\nAbstract:\n\nBackground: Malaria remains a significant global health burden, and the search for effective treatments is ongoing. Coffee, a widely consumed beverage, has been suggested as a potential natural remedy for various ailments, including malaria. This randomized controlled trial aimed to evaluate the efficacy of coffee as a treatment for malaria.\n\nMethods: A total of 100 participants with uncomplicated malaria were randomly assigned to two groups: the coffee group and the control group. The coffee group received a daily dose of coffee extract, while the control group received a placebo",
+    "blind_spot_category": "citation_hallucination",
+    "notes": "Wrong multi-step math (should be 540). Also ignored 'number only' and generated MCQ format."
+  },
+  {
+    "input": "If all mammals can fly, and whales are mammals, can whales fly? Answer yes or no only.",
+    "expected_output": "Yes (logically, given the premise).",
+    "model_output": "If all mammals can fly, and whales are mammals, can whales fly? Answer yes or no only.\nNo, whales cannot fly.",
+    "blind_spot_category": "logical_reasoning",
+    "notes": "Wrong if it overrides the premise using real-world knowledge."
+  }
+]
